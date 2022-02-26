@@ -6,11 +6,11 @@
 
 Assuming the fact the your domain’s ssl cert and key are present in cert directory and auth file for basic authentication is loacated in auth directory. Both these directories needs to be present in your current directory
 
- [root@ip-172-31-32-89 test]# ls
-auth  certs  docker-compose.yml
-[root@ip-172-31-32-89 test]# ls auth/
-htpasswd
-[root@ip-172-31-32-89 test]# ls certs/
+>[root@ip]# ls\
+auth  certs  docker-compose.yml\
+[root@ip]# ls auth\
+htpasswd\
+[root@ip]# ls certs\
 domain.crt  domain.key
 
 the original registry ui image used here is konradkleine/docker-registry-frontend:v2
@@ -31,42 +31,40 @@ Assuming the fact that the domain is already pointed to the server IP  and DNS p
 
 after ssl creation certificate location will be displayed in the terminal and container will auto terminate
 
-[root@ip-172-31-32-89 t]# docker container run -it --rm --name certbot -p 80:80 -v $(pwd)/certs:/etc/letsencrypt certbot/certbot certonly --standalone
+>[root@ip]# docker container run -it --rm --name certbot -p 80:80 -v $(pwd)/certs:/etc/letsencrypt certbot/certbot certonly --standalone
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
 Enter email address (used for urgent renewal and security notices)
  (Enter 'c' to cancel): email_here
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Please read the Terms of Service at
+
+>Please read the Terms of Service at
 https://letsencrypt.org/documents/LE-SA-v1.2-November-15-2017.pdf. You must
 agree in order to register with the ACME server. Do you agree?
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 (Y)es/(N)o: Y
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-Would you be willing, once your first certificate is successfully issued, to
+
+>Would you be willing, once your first certificate is successfully issued, to
 share your email address with the Electronic Frontier Foundation, a founding
 partner of the Let's Encrypt project and the non-profit organization that
 develops Certbot? We'd like to send you email about our work encrypting the web,
 EFF news, campaigns, and ways to support digital freedom.
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 (Y)es/(N)o: Y
 Account registered.
 Please enter the domain name(s) you would like on your certificate (comma and/or
 space separated) (Enter 'c' to cancel): test.sync-tracker.tk
 Requesting a certificate for test.sync-tracker.tk
-
 Successfully received certificate.
-Certificate is saved at: /etc/letsencrypt/live/test.sync-tracker.tk/fullchain.pem
+
+>Certificate is saved at: /etc/letsencrypt/live/test.sync-tracker.tk/fullchain.pem
 Key is saved at:         /etc/letsencrypt/live/test.sync-tracker.tk/privkey.pem
 This certificate expires on 2022-05-27.
 These files will be updated when the certificate renews.
 
 
->[root@ip-172-31-32-89 t]# ls certs\
+>[root@ip]# ls certs\
 accounts  archive  csr  keys  live  renewal  renewal-hooks\
-[root@ip-172-31-32-89 t]# ls certs/live\
+[root@ip]# ls certs/live\
 README                test.sync-tracker.tk\
-[root@ip-172-31-32-89 t]# ls certs/live/test.sync-tracker.tk\
+[root@ip]# ls certs/live/test.sync-tracker.tk\
 cert.pem  chain.pem  fullchain.pem  privkey.pem  README
 
