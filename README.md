@@ -30,6 +30,7 @@ image link [Docker image](https://hub.docker.com/repository/docker/yesudasphilip
 docker-compose file is updated here
 
 
+### Basic-auth setup
 
 After installing the following package you can write auth credentials to htpasswd file
 >yum install httpd-tools\
