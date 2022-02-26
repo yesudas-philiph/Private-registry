@@ -33,8 +33,8 @@ docker compose file is updated here
 
 
 After installing the following package you can write auth credentials to htpasswd file
-yum install httpd-tools
-htpasswd -Bc htpasswd username
+>yum install httpd-tools\
+>htpasswd -Bc htpasswd username
 
 SSL can be generated using certbot via the following docker command
 Assuming the fact that the domain is already pointed to the server IP  and DNS propagation for the same is completed also, please verify the fact that you are running this command from the server that your domain is pointed to.
