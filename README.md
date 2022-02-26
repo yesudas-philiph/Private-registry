@@ -2,7 +2,7 @@
 
 ## Private registry 
 
-A Docker registry is a storage and distribution system for named Docker images. The same image might have multiple different versions, identified by their tags. A Docker registry is organized into Docker repositories , where a repository holds all the versions of a specific image.
+A Docker registry is a storage and distribution system for named Docker images. The same image might have multiple different versions, identified by their tags. A Docker registry is organized into Docker repositories, where a repository holds all the versions of a specific image.
 
 Docker has a free public registry, Docker Hub, that can host your custom Docker images, but there are situations where you will not want your image to be publicly available. Images typically contain all the code necessary to run an application, so using a private registry is preferable when using proprietary software.
 
@@ -13,7 +13,7 @@ Docker has a free public registry, Docker Hub, that can host your custom Docker 
 ## Set-up
 ![Languages used](https://img.shields.io/badge/Number%20of%20Languages-1-Green) ![Languages used](https://img.shields.io/badge/Languages-YAML-Green)
 
-Assuming the fact the your domain’s ssl cert and key are present in cert directory and auth file for basic authentication is loacated in auth directory. Both these directories needs to be present in your current directory
+Assuming the fact that your domain’s SSL cert and key are present in the cert directory and auth file for basic authentication is located in auth directory. Both these directories need to be present in your current directory
 
 >[root@ip]# ls\
 auth  certs  docker-compose.yml\
@@ -22,13 +22,12 @@ htpasswd\
 [root@ip]# ls certs\
 domain.crt  domain.key
 
-the original registry ui image used here is konradkleine/docker-registry-frontend:v2
-it will help us to get a web view of your private regisry however the original image won’t allow you to push these images to the registry, current workaround is to comment out few lines in site configuration.
-
+the original registry ui image used here is konradkleine/docker-registry-frontend:v2\
+With the help of the UI we will get a web view of your private registry however the original image won’t allow you to push these images to the registry, current workaround is to comment out a few lines in the site configuration.
 
 I’ve made these changes to my image and using it here\
 image link [Docker image](https://hub.docker.com/repository/docker/yesudasphiliph/docker-registry-frontend) \
-docker compose file is updated here
+docker-compose file is updated here
 
 
 
@@ -40,7 +39,7 @@ SSL can be generated using certbot via the following docker command
 Assuming the fact that the domain is already pointed to the server IP  and DNS propagation for the same is completed also, please verify the fact that you are running this command from the server that your domain is pointed to.
 >docker container run -it --rm --name certbot -p 80:80 -v "$pwd/certs:/etc/letsencrypt" certbot/certbot certonly --standalone
 
-after ssl creation certificate location will be displayed in the terminal and container will auto terminate
+after SSL creation certificate location will be displayed in the terminal and the container will auto terminate
 
 >[root@ip]# docker container run -it --rm --name certbot -p 80:80 -v $(pwd)/certs:/etc/letsencrypt certbot/certbot certonly --standalone
 Saving debug log to /var/log/letsencrypt/letsencrypt.log
