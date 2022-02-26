@@ -1,7 +1,16 @@
-# Private-registry
+# Private-registry with SSL encryption
 
-## Private registry with Front end
+## Private registry 
 
+A Docker registry is a storage and distribution system for named Docker images. The same image might have multiple different versions, identified by their tags. A Docker registry is organized into Docker repositories , where a repository holds all the versions of a specific image.
+
+Docker has a free public registry, Docker Hub, that can host your custom Docker images, but there are situations where you will not want your image to be publicly available. Images typically contain all the code necessary to run an application, so using a private registry is preferable when using proprietary software.
+
+
+
+
+
+## Set-up
 ![Languages used](https://img.shields.io/badge/Number%20of%20Languages-1-Green) ![Languages used](https://img.shields.io/badge/Languages-YAML-Green)
 
 Assuming the fact the your domain’s ssl cert and key are present in cert directory and auth file for basic authentication is loacated in auth directory. Both these directories needs to be present in your current directory
@@ -18,7 +27,9 @@ it will help us to get a web view of your private regisry however the original i
 
 
 I’ve made these changes to my image and using it here\
-docker compose file is updated here [Docker image](https://hub.docker.com/repository/docker/yesudasphiliph/registry-ui) 
+image link [Docker image](https://hub.docker.com/repository/docker/yesudasphiliph/registry-ui) \
+docker compose file is updated here
+
 
 
 After installing the following package you can write auth credentials to htpasswd file
