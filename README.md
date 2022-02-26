@@ -27,7 +27,7 @@ it will help us to get a web view of your private regisry however the original i
 
 
 I’ve made these changes to my image and using it here\
-image link [Docker image](https://hub.docker.com/repository/docker/yesudasphiliph/registry-ui) \
+image link [Docker image](https://hub.docker.com/repository/docker/yesudasphiliph/docker-registry-frontend) \
 docker compose file is updated here
 
 
