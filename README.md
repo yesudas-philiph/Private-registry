@@ -1,6 +1,8 @@
 # Private-registry
+
 ## Private registry with Front end
-==============================
+
+![Languages used](https://img.shields.io/badge/Number%20of%20Languages-1-Green) ![Languages used](https://img.shields.io/badge/Languages-YAML-Green)
 
 Assuming the fact the your domain’s ssl cert and key are present in cert directory and auth file for basic authentication is loacated in auth directory. Both these directories needs to be present in your current directory
 
