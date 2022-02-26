@@ -32,7 +32,7 @@ services:
      - ./certs/domain.key:/etc/apache2/server.key:ro
     ports:
      -  443:443
-    image: yesudasphiliph/registry-ui:latest
+    image: yesudasphiliph/docker-registry-frontend
     networks:
      - mynet
 
