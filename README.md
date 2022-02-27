@@ -33,7 +33,10 @@ docker-compose file is updated here
 ### Basic-auth setup
 
 After installing the following package you can write auth credentials to htpasswd file
->yum install httpd-tools\
+>yum install httpd-tools
+
+use the following command to create htpasswd file user creds
+
 >htpasswd -Bc htpasswd username
 
 ### Setting up SSL for the registry and frontend
