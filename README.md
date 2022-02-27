@@ -39,7 +39,8 @@ After installing the following package you can write auth credentials to htpassw
 ### Setting up SSL for the registry and frontend
 SSL can be generated using certbot via the following docker command
 Assuming the fact that the domain is already pointed to the server IP  and DNS propagation for the same is completed also, please verify the fact that you are running this command from the server that your domain is pointed to.
->docker container run -it --rm --name certbot -p 80:80 -v "$pwd/certs:/etc/letsencrypt" certbot/certbot certonly --standalone
+
+ >docker container run -it --rm --name certbot -p 80:80 -v $(pwd)/certs:/etc/letsencrypt certbot/certbot certonly --standalone
 
 after SSL creation certificate location will be displayed in the terminal and the container will auto terminate
 
